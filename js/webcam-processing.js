@@ -4,7 +4,7 @@
   function sketchProc(processing) {
     var p                     = processing,
       ctx                     = WEBCAM.ctx,
-      nb                      = 120,
+      nb                      = 105,
       width                   = window.innerWidth,
       height                  = window.innerHeight,
       eWidth                  = width / nb,
