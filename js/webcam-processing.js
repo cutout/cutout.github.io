@@ -4,7 +4,7 @@
   function sketchProc(processing) {
     var p                     = processing,
       ctx                     = WEBCAM.ctx,
-      nb                      = 100,
+      nb                      = 100, // speed of fade
       width                   = window.innerWidth,
       height                  = window.innerHeight,
       eWidth                  = width / nb,
@@ -12,7 +12,7 @@
       cachedBrightness        = [],
       cachedDiameter          = [],
       transitionUpRatio       = eWidth / 3,
-      transitionDownRatio     = eWidth / 30,
+      transitionDownRatio     = eWidth / 40,
       transitionUpThreshold   = eWidth - transitionUpRatio,
       transitionDownThreshold = transitionDownRatio,
       myImg = document.getElementById('the-image'),
