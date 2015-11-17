@@ -5,12 +5,24 @@
     <meta http-equiv="refresh" content="240">
   </head>
   <body>
-    <video autoplay id="videostream"></video>
-    <img src="img/logo-yellow.png" style="display: none;visibility:none" id="the-image">
-    <img src="img/logo.png" class="logo">
-    <canvas id="canvas1"></canvas>
+    <div class="loadscreen"><img class="spinner" src="img/spinner.png" /></div>
+    <div class="cam-wrap">
+      <video autoplay id="videostream"></video>
+      <img src="img/logo-yellow.png" style="display: none;visibility:none" id="the-image">
+      <img src="img/logo.png" class="logo">
+      <canvas id="canvas1"></canvas>
+    </div>
     <script type="text/javascript" src="js/lib/processing-1.3.6.js"></script>
     <script type="text/javascript" src="js/webcam.js"></script>
     <script type="text/javascript" src="js/webcam-processing.js"></script>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js?ver=1.7.2'></script>
+
+    <script type="text/javascript">
+    //Loading state
+$(function(){
+    setTimeout(function(){$("body").addClass("preload")},100),
+    setTimeout(function(){$("body").addClass("loaded")},3000)
+  });
+  </script>
   </body>
 </html>
