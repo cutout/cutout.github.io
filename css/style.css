@@ -54,7 +54,6 @@ body {
 }
 
 .preload.loaded .loadscreen {
-	transition:1s;
 	opacity:0;
 }
 
