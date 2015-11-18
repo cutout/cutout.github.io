@@ -16,6 +16,11 @@
       transitionUpThreshold   = eWidth - transitionUpRatio,
       transitionDownThreshold = transitionDownRatio,
       myImg = document.getElementById('the-image'),
+      // Amount to offset the pixels every line scan. This makes it seem like
+      // the camera is panning a bit. To turn this off, set both to 0.
+      offset = 0, // Initial offset, gets incremented and reset after offsetLimit is reached
+      offsetLimit = 2, // Effecitively controls the "thickness" of the offset effect
+      //
       imgPixelData;
 
     p.setup = function () {
@@ -69,7 +74,7 @@
 
       for (j = 0; j <= nb; j += 1) {
         for (i = 0; i <= nb; i += 1) {
-          val = p.pixels.getPixel(j * width + i);
+          val = p.pixels.getPixel(j * width + i + offset);
           currentBrightness = p.brightness(val);
           currentSize = cachedDiameter[j][i];
           p.ellipseMode(p.CORNER);
@@ -86,6 +91,10 @@
             cachedBrightness[j][i] = currentBrightness;
             cachedDiameter[j][i] = currentSize;
           }
+        }
+        offset++;
+        if (offset > offsetLimit) {
+          offset = 0;
         }
       }
 
