@@ -69,7 +69,7 @@
 
       for (j = 0; j <= nb; j += 1) {
         for (i = 0; i <= nb; i += 1) {
-          var offset = (i > 0) ? Math.round(Math.random() * .502) : 0;
+          var offset = (i > 0) ? Math.round(Math.random() * .501) : 0;
           val = p.pixels.getPixel(j * width + i - offset);
           currentBrightness = p.brightness(val);
           currentSize = cachedDiameter[j][i];
